@@ -1,9 +1,10 @@
 import { ContainerScroll } from "@/components/global/ContainerScroll";
+import { HeroParallax } from "@/components/global/HeroParallax";
 import { InfiniteMovingCards } from "@/components/global/InfiniteMovingCards";
+import { LampComponent } from "@/components/global/Lamp";
 import Navbar from "@/components/global/Navbar";
 import { Button } from "@/components/ui/button";
-import { clients } from "@/lib/onstant";
-import Image from "next/image";
+import { clients, products } from "@/lib/constant";
 
 export default function Home() {
   return (
@@ -38,6 +39,13 @@ export default function Home() {
         direction="right"
         speed="slow"
       />
+      <section>
+        <HeroParallax products={products} />
+      </section>
+      <section className="mt-[-500px]">
+        <LampComponent />
+        <div className="flex flex-wrap items-center justify-center flex-col md:flex-row gap-8 -mt-72"></div>
+      </section>
     </main>
   );
 }
